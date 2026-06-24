@@ -29,13 +29,11 @@ function doPost(e) {
 
   // 2. รูปภาพ (Image) + สติกเกอร์ (Sticker)
   else if (userMessage === "รูปภาพ") {
-    // รูป ใส่ลิ้งเดียวกันได้
-	messagesToSend.push({
+    messagesToSend.push({
       "type": "image",
       "originalContentUrl": "https://example.com/image.jpg", // เปลี่ยนเป็น URL รูปของคุณ
       "previewImageUrl": "https://example.com/preview.jpg"
     });
-	// สติ๊กเกอร์
     messagesToSend.push({
       "type": "sticker",
       "packageId": "446",
@@ -45,7 +43,7 @@ function doPost(e) {
 
   // 3. วิดีโอ (Video) + เสียง (Audio)
   else if (userMessage === "วิดีโอ") {
-    messagesToSend.push({
+messagesToSend.push({
       "type": "video",
       "originalContentUrl": "https://example.com/video.mp4",
       "previewImageUrl": "https://example.com/preview.jpg"
@@ -65,8 +63,7 @@ function doPost(e) {
 
   // 5. Flex Message (รูปแบบอิสระ)
   else if (userMessage === "เมนู") {
-    // เมนู คลิกแล้วจะส่งข้อความ
-	messagesToSend.push({
+    messagesToSend.push({
       "type": "flex",
       "altText": "เมนูหลัก",
       "contents": {
@@ -91,10 +88,9 @@ function doPost(e) {
 
   // 6. กรณีใช้ RegEx ตรวจจับคำ (เช่น ราคาน้ำมัน)
   else if (/.*น้ำมัน.*/.test(userMessage)) {
-    // ข้อความ หรือ ลิ้ง อีโมจิ
-	messagesToSend.push({
+    messagesToSend.push({
       "type": "text",
-      "text": "😊🙏 เช็คราคาน้ำมันได้ที่ลิ้งนี้:\nhttps://script.google.com/macros/s/AKfycbyrimYzpFj9qEUgATD5n1s8YqnhmAyFZSHH80AAf0NWIvZ7VSKOAB9zkTFawRC1gBIaTg/exec"
+      "text": "เช็คราคาน้ำมันล่าสุดได้ที่:\n https://script.google.com/macros/s/AKfycbyrimYzpFj9qEUgATD5n1s8YqnhmAyFZSHH80AAf0NWIvZ7VSKOAB9zkTFawRC1gBIaTg/exec"
     });
   }
 
@@ -105,7 +101,7 @@ function doPost(e) {
 }
 
 // ฟังก์ชันหลักในการส่งคำขอไปยัง LINE API
-function sendReply(replyToken, messagesArray) {
+function sendReply(replyToken, messagesToSend) {
   var url = 'https://api.line.me/v2/bot/message/reply';
   var options = {
     'method': 'post',
@@ -115,7 +111,7 @@ function sendReply(replyToken, messagesArray) {
     },
     'payload': JSON.stringify({
       'replyToken': replyToken,
-      'messages': messagesArray
+      'messages': messagesToSend
     })
   };
   
