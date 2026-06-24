@@ -19,7 +19,7 @@ function doPost(e) {
   var responseImage = "";
 
   if (/.*น้ำมัน.*/.test(userMessage) && /.*รถ.*/.test(userMessage)) {
-    responseText = "ลิ้งนี้ https://sanyan-app.vercel.app/fuel";
+    responseText = "ลิ้งนี้ https://script.google.com/macros/s/AKfycbyrimYzpFj9qEUgATD5n1s8YqnhmAyFZSHH80AAf0NWIvZ7VSKOAB9zkTFawRC1gBIaTg/exec";
     responseImage = "https://lh3.googleusercontent.com/d/1A-ArkjWy-xA1UxUJVMdeD79P2jiYL_WU";
   }
   else if ((/.*คำนวน.*/.test(userMessage) || /.*คำนวณ.*/.test(userMessage)) && /.*เงินกู้.*/.test(userMessage)) {

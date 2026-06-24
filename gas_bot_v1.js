@@ -17,7 +17,7 @@ function doPost(e) {
   var responseText = "";
 
   if (/.*น้ำมัน.*/.test(userMessage) && /.*รถ.*/.test(userMessage)) {
-    responseText = "https://sanyan-app.vercel.app/fuel";
+    responseText = "https://script.google.com/macros/s/AKfycbyrimYzpFj9qEUgATD5n1s8YqnhmAyFZSHH80AAf0NWIvZ7VSKOAB9zkTFawRC1gBIaTg/exec";
   } 
   // ตรวจจับขึ้นต้นด้วยคำที่กำหนด: "จองที่พัก", "จองโต๊ะ", "จอง"
   else if (/^จอง.*/.test(userMessage)) {
