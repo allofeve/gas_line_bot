@@ -16,7 +16,7 @@ function doPost(e) {
 
   // 1. ตรวจจับคำว่า "ราคา" ตามด้วยอะไรก็ได้ (Wildcard: .*)
   if (/.*น้ำมัน.*/.test(userMessage)) {
-    responseText = "https://sanyan-app.vercel.app/fuel";
+    responseText = "https://script.google.com/macros/s/AKfycbyrimYzpFj9qEUgATD5n1s8YqnhmAyFZSHH80AAf0NWIvZ7VSKOAB9zkTFawRC1gBIaTg/exec";
   } 
   
   // 2. ตรวจจับคำขึ้นต้นด้วย "จอง" หรือ "จองที่พัก" (Wildcard เฉพาะเจาะจง)
